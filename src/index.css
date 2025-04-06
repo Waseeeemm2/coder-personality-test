@@ -1,0 +1,94 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 260 100% 99%;
+    --foreground: 260 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 10% 10%;
+
+    --primary: 262 80% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 276, 87%, 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 20% 96%;
+    --muted-foreground: 260 10% 45%;
+
+    --accent: 262 80% 95%;
+    --accent-foreground: 260 10% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 20% 92%;
+    --input: 260 20% 92%;
+    --ring: 262 80% 75%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .aura-card {
+    @apply relative overflow-hidden rounded-2xl border bg-white/50 shadow-lg backdrop-blur-sm transition-all;
+    box-shadow: 0 8px 30px rgba(155, 135, 245, 0.15);
+  }
+
+  .aura-border {
+    @apply border border-white/20 bg-gradient-to-b from-white/80 to-white/20 shadow-lg;
+  }
+  
+  .aura-glow {
+    @apply relative;
+  }
+  
+  .aura-glow:after {
+    content: "";
+    @apply absolute -inset-[2px] rounded-[inherit] bg-gradient-to-r from-aura-purple via-aura-pink to-aura-blue opacity-50 blur -z-10;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
